@@ -53,3 +53,23 @@ var quizQuestions = [
         answer: 4
     }
 ];
+
+// Timer
+function countdown() {
+
+    timeInterval = setInterval(function () {
+        if (timeLeft > 1) {
+            timer.textContent = "Time: " + timeLeft + " seconds remaining"
+            timeLeft--
+        } else if
+            (timeLeft === 1) {
+            timer.textContent = "Time: " + timeLeft + " second remaining"
+            timeLeft--
+        }
+        else {
+            clearInterval(timeInterval)
+            timer.textContent = "You ran out of time!"
+            timeLeft = 0
+        }
+    }, 1000);
+}
