@@ -93,6 +93,17 @@ var getQuestion = function () {
 
 }
 
+var subtractTime = function () {
+    timeLeft -= 10
+    timer.textContent = "Time: " + timeLeft + " seconds remaining"
+}
+
+// starts the quiz, makes sure the counter is at zero and assigns the questions array to avaiable questions
+var startQuiz = function () {
+    questionCounter = 0
+    getQuestion()
+}
+
 var choiceHandler = function (event) {
     var targetEl = event.target
 
