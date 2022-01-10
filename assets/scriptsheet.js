@@ -1,7 +1,22 @@
+var question = document.querySelector("#question")
+var choiceContainer = document.querySelector("#multiple-choice-container")
+var choiceText1 = document.querySelector("#choice-text-1")
+var choiceText2 = document.querySelector("#choice-text-2")
+var choiceText3 = document.querySelector("#choice-text-3")
+var choiceText4 = document.querySelector("#choice-text-4")
+var answerText = document.querySelector("#answer-text")
+var finalScore = document.querySelector("#final-score")
+var timer = document.querySelector("#timer")
+var submitForm = document.querySelector(".submit-form")
 
+var questionCounter = 0 // What question are you on?
+var availableQuestions = []
 
+var timeInterval
+var timeLeft = 50;
 
-
+// create array to hold initials/scores for saving
+var initialsScores = [];
 
 
 var quizQuestions = [
