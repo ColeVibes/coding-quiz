@@ -185,3 +185,20 @@ var createFormEl = function () {
     submitBtn.addEventListener("click", saveScore)
 }
 
+var saveScore = function () {
+    answerText.textContent = "Check the high scores to see where you rank!"
+
+    // grabs the initials that were entered in the input field
+    var initials = document.querySelector(".initialsForm").value
+
+    var initialsScoresDataObj = {
+        score: timeLeft,
+        initials: initials,
+    } // need to add data- attribute here to save multiple scores and initials 
+
+    initialsScores.push(initialsScoresDataObj)
+
+    localStorage.setItem("playerScore", JSON.stringify(initialsScoresDataObj))
+};
+
+
