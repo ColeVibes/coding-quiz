@@ -165,3 +165,23 @@ var checkAnswer = function (choiceNumber) {
         }
     }
 }
+
+var createFormEl = function () {
+    var labelEl = document.createElement("label")
+    labelEl.textContent = "Enter Initials: "
+
+    var inputEl = document.createElement("input")
+    inputEl.className = "initialsForm";
+
+    var submitBtn = document.createElement("button")
+    submitBtn.type = "submit"
+    submitBtn.textContent = "Submit"
+
+    submitForm.appendChild(labelEl)
+    submitForm.appendChild(inputEl)
+    submitForm.appendChild(submitBtn)
+
+    // if submit btn is clicked, save to local storage
+    submitBtn.addEventListener("click", saveScore)
+}
+
