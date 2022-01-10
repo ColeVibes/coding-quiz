@@ -9,13 +9,12 @@ var finalScore = document.querySelector("#final-score")
 var timer = document.querySelector("#timer")
 var submitForm = document.querySelector(".submit-form")
 
-var questionCounter = 0 // What question are you on?
+var questionCounter = 0 
 var availableQuestions = []
 
 var timeInterval
 var timeLeft = 50;
 
-// create array to hold initials/scores for saving
 var initialsScores = [];
 
 
@@ -24,17 +23,17 @@ var quizQuestions = [
         question: "How do you create a function in JavaScript?",
         choice1: "function()",
         choice2: "create myFunction = function()",
-        choice3: "var myFunction = function()",
-        choice4: "function.create",
-        answer: 3
+        choice3: "function.create",
+        choice4: "var myFunction = function()",
+        answer: 4
     },
     {
         question: "What is the method that converts a JavaScript object or value into a string?",
-        choice1: "JSON.stringify()",
+        choice1: "stringify()",
         choice2: "make.string()",
         choice3: "JSON.parse()",
-        choice4: "stringify()",
-        answer: 1
+        choice4: "JSON.stringify()",
+        answer: 4
     },
     {
         question: "Where does the script tag go in the HTML file? ",
@@ -47,10 +46,10 @@ var quizQuestions = [
     {
         question: "Which of the below choices can be objects?",
         choice1: "Booleans",
-        choice2: "Numbers",
+        choice2: "All of the above",
         choice3: "Strings",
-        choice4: "All of the above",
-        answer: 4
+        choice4: "Numbers",
+        answer: 2
     }
 ];
 
@@ -68,7 +67,7 @@ function countdown() {
         }
         else {
             clearInterval(timeInterval)
-            timer.textContent = "You ran out of time!"
+            timer.textContent = "Your time ran out!"
             timeLeft = 0
         }
     }, 1000);
@@ -119,7 +118,7 @@ var checkAnswer = function (choiceNumber) {
     var correctAnswer = quizQuestions[questionCounter].answer
 
     if (choiceNumber == correctAnswer) {
-        console.log("You answered correct!")
+        console.log("You answered correctly!")
 
         answerText.textContent = "Correct!"
 
@@ -129,8 +128,8 @@ var checkAnswer = function (choiceNumber) {
             getQuestion()
         }
         else { 
-            question.textContent = "All Done!"
-            finalScore.textContent = "Your final score is: " + timeLeft
+            question.textContent = "You finished!"
+            finalScore.textContent = "Your score is: " + timeLeft
             choiceContainer.remove() 
             clearInterval(timeInterval)
             timer.remove()
@@ -138,7 +137,7 @@ var checkAnswer = function (choiceNumber) {
         }
     }
     else {
-        console.log("You answered incorrect!")
+        console.log("Your answer was incorrect!")
 
         answerText.textContent = "Incorrect!"
         subtractTime()
@@ -149,8 +148,8 @@ var checkAnswer = function (choiceNumber) {
             getQuestion()
         }
         else {
-            question.textContent = "All Done!"
-            finalScore.textContent = "Your final score is: " + timeLeft
+            question.textContent = "You have finished!"
+            finalScore.textContent = "Your score is: " + timeLeft
             choiceContainer.remove()
             clearInterval(timeInterval)
             timer.remove()
