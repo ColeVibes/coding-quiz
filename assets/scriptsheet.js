@@ -118,3 +118,50 @@ var choiceHandler = function (event) {
         checkAnswer(choiceNumber);
     }
 }
+
+var checkAnswer = function (choiceNumber) {
+    var correctAnswer = quizQuestions[questionCounter].answer
+
+    if (choiceNumber == correctAnswer) {
+        console.log("You answered correct!")
+
+        // display whether answer was correct or incorrect
+        answerText.textContent = "Correct!"
+
+        // need to increment counter by 1 and move through getQuestion function again
+        questionCounter++
+
+        if (questionCounter <= 3) {
+            getQuestion()
+        }
+        else { // if there are no more questions left
+            // let user save score and name to local storage
+            question.textContent = "All Done!"
+            finalScore.textContent = "Your final score is: " + timeLeft
+            choiceContainer.remove() // removes container from displaying on page
+            clearInterval(timeInterval)
+            timer.remove() // removes timer from displaying on page
+            createFormEl()
+        }
+    }
+    else {
+        console.log("You answered incorrect!")
+
+        answerText.textContent = "Incorrect!"
+        subtractTime() // function subtracts 10 from the countdown/score
+
+        questionCounter++
+
+        if (questionCounter <= 3) {
+            getQuestion()
+        }
+        else {
+            question.textContent = "All Done!"
+            finalScore.textContent = "Your final score is: " + timeLeft
+            choiceContainer.remove()
+            clearInterval(timeInterval)
+            timer.remove()
+            createFormEl()
+        }
+    }
+}
