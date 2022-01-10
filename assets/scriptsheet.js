@@ -202,3 +202,11 @@ var saveScore = function () {
 };
 
 
+choiceText1.addEventListener("click", choiceHandler);
+choiceText2.addEventListener("click", choiceHandler);
+choiceText3.addEventListener("click", choiceHandler);
+choiceText4.addEventListener("click", choiceHandler);
+
+
+// call the countdown function to start the timer
+countdown()
