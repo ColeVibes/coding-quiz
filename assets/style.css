@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    font-size: 20px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header a {
+    text-decoration: none;
+    color:purple;
+}
+
+header div {
+    padding: 40px;
+}
+
+.container-main {
+    text-align: center;
+    margin: 70px 300px;
+}
+
+.container-main h1 {
+    font-size: 45px;
+    margin: 20px;
+}
+
+main p {
+    font-size: 28px;
+    margin: 20px;
+}
+
+button {
+    color: white;
+    font-size: 28px;
+    background-color: purple;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+button a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+/* for local-score.html page */
+#question {
+    font-size: 45px;
+    margin: 20px;
+}
+.choices {
+    display: flex;
+    color: white;
+    font-size: 28px;
+    background-color: purple;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+#choice-text-1, #choice-text-2, #choice-text-3, #choice-text-4 {
+    width: 100%;
+    text-align: left;
+}
+
+#answer-text {
+    font-size: 20px;
+    font-style: italic;
+    color: gray;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+#final-score {
+    font-size: 30px;
+    color: purple;
+    margin-bottom: 20px;
+}
+
+.submit-form {
+    font-size: 30px;
+}
+
+.submit-form input {
+    padding: 12px 20px;
+}
