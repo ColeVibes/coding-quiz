@@ -188,7 +188,7 @@ var createFormEl = function () {
 }
 
 var scoreSaver = function () {
-    answerText.textContent = "Check the high scores to see where you rank!"
+    answerText.textContent = "Check scores to see where you rank!"
 
     var initials = document.querySelector(".initialsForm").value
 
