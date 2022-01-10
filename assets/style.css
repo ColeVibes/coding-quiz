@@ -72,6 +72,11 @@ button a {
     margin: 20px;
 }
 
+.choices:hover {
+    background-color: yellow;
+    color: black;
+}
+
 #choice-text-1, #choice-text-2, #choice-text-3, #choice-text-4 {
     width: 100%;
     text-align: left;
