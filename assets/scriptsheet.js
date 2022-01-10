@@ -160,7 +160,7 @@ var checkAnswer = function (choiceNumber) {
         }
         else {
             question.textContent = "You have finished!"
-            finalScore.textContent = "Your score is: " + timeLeft
+            finalScore.textContent = "Your ended with a score of: " + timeLeft
             choiceContainer.remove()
             clearInterval(timeInterval)
             timer.remove()
@@ -171,7 +171,7 @@ var checkAnswer = function (choiceNumber) {
 
 var createFormEl = function () {
     var labelEl = document.createElement("label")
-    labelEl.textContent = "Enter Initials: "
+    labelEl.textContent = "Enter Your Name: "
 
     var inputEl = document.createElement("input")
     inputEl.className = "initialsForm";
