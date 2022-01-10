@@ -80,19 +80,15 @@ var getQuestion = function () {
     var questionText = currentQuestion.question
     question.textContent = questionText
 
-    // choice 1
     var choiceTextA = currentQuestion.choice1
     choiceText1.textContent = choiceTextA
 
-    // choice 2
     var choiceTextB = currentQuestion.choice2
     choiceText2.textContent = choiceTextB
 
-    // choice 3
     var choiceTextC = currentQuestion.choice3
     choiceText3.textContent = choiceTextC
 
-    // choice 4
     var choiceTextD = currentQuestion.choice4
     choiceText4.textContent = choiceTextD
 
@@ -125,22 +121,19 @@ var checkAnswer = function (choiceNumber) {
     if (choiceNumber == correctAnswer) {
         console.log("You answered correct!")
 
-        // display whether answer was correct or incorrect
         answerText.textContent = "Correct!"
 
-        // need to increment counter by 1 and move through getQuestion function again
         questionCounter++
 
         if (questionCounter <= 3) {
             getQuestion()
         }
-        else { // if there are no more questions left
-            // let user save score and name to local storage
+        else { 
             question.textContent = "All Done!"
             finalScore.textContent = "Your final score is: " + timeLeft
-            choiceContainer.remove() // removes container from displaying on page
+            choiceContainer.remove() 
             clearInterval(timeInterval)
-            timer.remove() // removes timer from displaying on page
+            timer.remove()
             createFormEl()
         }
     }
@@ -148,7 +141,7 @@ var checkAnswer = function (choiceNumber) {
         console.log("You answered incorrect!")
 
         answerText.textContent = "Incorrect!"
-        subtractTime() // function subtracts 10 from the countdown/score
+        subtractTime()
 
         questionCounter++
 
@@ -181,20 +174,18 @@ var createFormEl = function () {
     submitForm.appendChild(inputEl)
     submitForm.appendChild(submitBtn)
 
-    // if submit btn is clicked, save to local storage
-    submitBtn.addEventListener("click", saveScore)
+    submitBtn.addEventListener("click", scoreSaver)
 }
 
-var saveScore = function () {
+var scoreSaver = function () {
     answerText.textContent = "Check the high scores to see where you rank!"
 
-    // grabs the initials that were entered in the input field
     var initials = document.querySelector(".initialsForm").value
 
     var initialsScoresDataObj = {
         score: timeLeft,
         initials: initials,
-    } // need to add data- attribute here to save multiple scores and initials 
+    } 
 
     initialsScores.push(initialsScoresDataObj)
 
