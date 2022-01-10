@@ -97,3 +97,24 @@ var getQuestion = function () {
     choiceText4.textContent = choiceTextD
 
 }
+
+var choiceHandler = function (event) {
+    var targetEl = event.target
+
+    if (targetEl.matches("#choice-text-1")) {
+        var choiceNumber = targetEl.getAttribute("data-number");
+        checkAnswer(choiceNumber);
+    }
+    else if (targetEl.matches("#choice-text-2")) {
+        var choiceNumber = targetEl.getAttribute("data-number");
+        checkAnswer(choiceNumber);
+    }
+    else if (targetEl.matches("#choice-text-3")) {
+        var choiceNumber = targetEl.getAttribute("data-number");
+        checkAnswer(choiceNumber);
+    }
+    else if (targetEl.matches("#choice-text-4")) {
+        var choiceNumber = targetEl.getAttribute("data-number");
+        checkAnswer(choiceNumber);
+    }
+}
