@@ -73,3 +73,27 @@ function countdown() {
         }
     }, 1000);
 }
+
+var getQuestion = function () {
+
+    var currentQuestion = quizQuestions[questionCounter]
+    var questionText = currentQuestion.question
+    question.textContent = questionText
+
+    // choice 1
+    var choiceTextA = currentQuestion.choice1
+    choiceText1.textContent = choiceTextA
+
+    // choice 2
+    var choiceTextB = currentQuestion.choice2
+    choiceText2.textContent = choiceTextB
+
+    // choice 3
+    var choiceTextC = currentQuestion.choice3
+    choiceText3.textContent = choiceTextC
+
+    // choice 4
+    var choiceTextD = currentQuestion.choice4
+    choiceText4.textContent = choiceTextD
+
+}
