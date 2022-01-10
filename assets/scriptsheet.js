@@ -207,6 +207,6 @@ choiceText2.addEventListener("click", choiceHandler);
 choiceText3.addEventListener("click", choiceHandler);
 choiceText4.addEventListener("click", choiceHandler);
 
+startQuiz()
 
-// call the countdown function to start the timer
 countdown()
